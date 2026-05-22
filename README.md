@@ -13,6 +13,7 @@ A full-stack personal productivity dashboard built with React 18 + Express + Mon
 | Backend | Express 4 (MVC, ESM) |
 | Database | MongoDB + Mongoose |
 | Auth | JWT (httpOnly cookies) + bcrypt |
+| Validation | Zod (frontend) + Joi (backend) |
 | Drag & Drop | @dnd-kit/core |
 | Testing | Vitest + Supertest |
 
