@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /Users/mishyali/Documents/Products/focusflow/server && npm install 2>&1 | tail -5)",
+      "Bash(cd /Users/mishyali/Documents/Products/focusflow/client && npm install 2>&1 | tail -5)",
+      "Bash(npm test:*)",
+      "Bash(cd /Users/mishyali/Documents/Products/focusflow/client && npm run build 2>&1)",
+      "Bash(npm run:*)",
+      "Bash(cd /Users/mishyali/Documents/Products/focusflow/server && npm install 2>&1 | tail -3)",
+      "Bash(lsof -ti:5000 | xargs kill -9 2>/dev/null; echo \"cleared\")",
+      "Bash(kill %1 2>/dev/null; true)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/api/auth/me)",
+      "Bash(npm install:*)"
+    ]
+  }
+}

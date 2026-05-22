@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-base: #FAF9F5;
+  --color-surface: #FFFFFF;
+  --color-surface-warm: #F5F0E8;
+  --color-border-warm: #E8E0D8;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #6B6560;
+  --color-text-muted: #9E9693;
+}
+
+.dark {
+  --color-bg-base: #1C1917;
+  --color-surface: #27211E;
+  --color-surface-warm: #2C2521;
+  --color-border-warm: #3D3530;
+  --color-text-primary: #FAF9F5;
+  --color-text-secondary: #B8AFA8;
+  --color-text-muted: #7A726D;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-base text-text-primary font-sans antialiased;
+  }
+
+  * {
+    @apply border-border-warm;
+  }
+}
+
+/* Hide the browser's native calendar icon on date inputs so our custom icon shows cleanly */
+input[type='date']::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 2rem;
+  cursor: pointer;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-copper hover:bg-copper-dark text-white font-medium px-4 py-2 rounded transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-copper focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-warm hover:bg-border-warm text-text-primary font-medium px-4 py-2 rounded border border-border-warm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-copper focus:ring-offset-2;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 border border-border-warm rounded bg-surface text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-copper focus:border-transparent transition;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg border border-border-warm shadow-sm;
+  }
+}
